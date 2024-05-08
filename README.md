@@ -23,7 +23,7 @@ Hybrid Custom Framework to Test the REST APIs
 ### To Freeze your Package version
 `` pip freeze > requirements.txt ``
 
-## To Install te Freeze Version
+## To Install the Freeze Version
 ``pip install -r requirements.txt``
 
 
