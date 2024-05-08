@@ -12,7 +12,7 @@ from src.utils.utils import *
 
 class TestCreateBooking(object):
     @pytest.mark.positive
-    @allure.title("Verify that create booking status and bookinid shouldn't be null")
+    @allure.title("Verify that create booking status and bookingid shouldn't be null")
     @allure.description("create a booking from the payload and verify that bookingid shouldn't be null and "
                         "status code should be 200 for the correct payload ")
     def test_create_booking_positive(self):
