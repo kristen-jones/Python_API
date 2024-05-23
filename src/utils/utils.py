@@ -9,7 +9,7 @@ class Util(object):
 
     def common_headers_xml(self):
         headers = {
-            "Content-Type": "application/xml"
+            "Content-Type": "application/json"
         }
         return headers
 

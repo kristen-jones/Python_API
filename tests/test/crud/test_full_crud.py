@@ -60,8 +60,10 @@ class TestCRUDBooking(object):
             in_json=False
         )
         # Verification here & more
+
         verify_response_key(response.json()["firstname"], "Kristen")
         verify_response_key(response.json()["lastname"], "Jones")
+
         verify_http_status_code(response_data=response, expect_data=200)
 
     @allure.title("Test CRUD operation delete(DELETE)")
