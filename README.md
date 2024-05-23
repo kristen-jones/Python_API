@@ -23,7 +23,7 @@ Hybrid Custom Framework to Test the REST APIs
 ### To Freeze your Package version
 `` pip freeze > requirements.txt ``
 
-## To Install te Freeze Version
+## To Install the Freeze Version
 ``pip install -r requirements.txt``
 
 
@@ -40,3 +40,15 @@ Hybrid Custom Framework to Test the REST APIs
 
 ### To work wit JSON Schema
 ```pip install jsonschema```
+
+### How to run via Jenkins (CI/CD)
+![320336875-f6901407-910b-4ea2-a329-0a4433f7e240](https://github.com/Kristenkj/Python_API/assets/152015061/285e615b-8225-40f0-b366-5ef31fc06724)
+
+- Jenkins Run Process
+- Install Jenkins
+- Install JDK (Open JDK)
+- Set it into the Global Config
+- Install the plugins: 
+  - Allure Report 
+  - HTML Report
+- Connect to the Github repo of choice
