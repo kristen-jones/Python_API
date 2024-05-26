@@ -38,3 +38,22 @@ def get_booking_id():
     verify_http_status_code(response_data=response, expect_data=200)
     verify_json_key_for_not_null(booking_id)
     return booking_id
+
+
+
+@pytest.fixture(scope="session")
+def create_booking():
+    response = post_request(
+        url=APIConstants.url_create_booking(),
+        auth=None,
+        headers=Util().common_headers_json(),
+        payload=payload_create_booking_dynamic(),
+        in_json=False
+    )
+    booking_id = response.json()["bookingid"]
+
+    # Verifications
+    verify_http_status_code(response_data=response, expect_data=200)
+    verify_json_key_for_not_null_token(booking_id)
+
+    return booking_id

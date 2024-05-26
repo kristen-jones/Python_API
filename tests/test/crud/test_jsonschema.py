@@ -6,7 +6,6 @@
 
 """
 
-from jsonschema import validate
 import pytest
 import allure
 import os

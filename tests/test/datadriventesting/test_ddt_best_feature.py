@@ -9,19 +9,7 @@ import pytest
 from src.constants.api_constants import APIConstants
 from src.helpers.api_requests_wrapper import *
 from src.utils.utils import Util
-
-
-def read_credentials_from_excel(file_path):
-    credentials = []
-    workbook = openpyxl.load_workbook(filename=file_path)
-    sheet = workbook.active
-    for row in sheet.iter_rows(min_row=2, values_only=True):
-        username, password = row
-        credentials.append(({
-            "username": username,
-            "password": password
-        }))
-    return credentials
+from tests.test.datadriventesting.test_ddt_for_loop import read_credentials_from_excel
 
 
 def create_auth_request(username, password):
