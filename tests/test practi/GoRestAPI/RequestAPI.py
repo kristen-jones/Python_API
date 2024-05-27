@@ -141,76 +141,7 @@ class ApiRequests:
         print(delete_status_code)
 
 
-"""
-    #Post Request
-    def test_post_request(self):
-        url = self.base_url + "/public/v2/users"
-        print("post url: " + url)
-        headers = {"Authorization": self.auth_token}
-        payload = {
-            "name": self.fake.name(),
-            "email": self.fake.email(),
-            "gender": "Female",
-            "status": "active"
-        }
 
-        response = requests.post(url, payload, headers=headers)
-        assert response.status_code == 201
-        print(response.status_code)
-
-        json_payload = response.json()
-        #json_str = json.dumps(json_payload, indent=4)
-
-        user_id = json_payload["id"]
-        print("User id: ", user_id)
-        print("json POST response body: ", json.dumps(json_payload, indent=4))
-        #assert "name" in json_payload
-        #assert json_payload["name"] == payload["name"]
-        print("....USER HAS BEEN CREATED....")
-        return user_id
-
-    #Put Request
-    def test_put_request(self, user_id):
-        url = self.base_url + f"/public/v2/users/{user_id}"
-        print("put url: " + url)
-        headers = {"Authorization": self.auth_token}
-        payload = {
-            "name": self.fake.name(),
-            "email": self.fake.email(),
-            "gender": "Female",
-            "status": "inactive"
-        }
-        response = requests.put(url, payload, headers=headers)
-        assert response.status_code == 200
-        print(response.status_code)
-        json_payload = response.json()
-        json_str = json.dumps(json_payload, indent=4)
-        print("json PUT response body: ", json_str)
-        assert json_payload["id"] == user_id
-        assert json_payload["name"] == payload["name"]
-        assert json_payload["email"] == payload["email"]
-        print("....USER INFO HAS BEEN UPDATED....")
-        print()
-
-    #Delete Request
-    def test_delete_request(self, user_id):
-        url = self.base_url + f"/public/v2/users/{user_id}"
-        print("Delete url: " + url)
-        headers = {"Authorization": self.auth_token}
-
-        response = requests.delete(url, headers=headers)
-        assert response.status_code == 204
-        print(response.status_code)
-        print("......DELETE USER IS DONE.......")
-
-    #Calling section
-
-    
-    user_id = test_post_request()
-    test_put_request(user_id)
-    test_delete_request(user_id)
-    
-"""
 api_test = ApiRequests()
 
 api_test.test_get_request_all()
