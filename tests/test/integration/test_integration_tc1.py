@@ -23,6 +23,7 @@ class TestIntegrationBooking(object):
     @allure.description("Create a booking")
     def test_create_booking(self, create_booking):
         logger.info(f"Booking created:  {create_booking}")
+        print(create_booking)
 
     @pytest.mark.positive
     @allure.title("Partial update: Update the booking name")
@@ -64,3 +65,5 @@ class TestIntegrationBooking(object):
     @allure.description("Verify the ID of the booking that was created")
     def test_get_specific_booking(self):
         pass
+
+

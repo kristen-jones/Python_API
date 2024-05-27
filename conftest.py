@@ -57,3 +57,13 @@ def create_booking():
     verify_json_key_for_not_null_token(booking_id)
 
     return booking_id
+
+@pytest.fixture
+def update_payload(self):
+    def _update_payload(payload, updates):
+        """ Update specific keys in the payload with provided values. """
+        payload.update(updates)
+        return payload
+    return _update_payload
+
+
